@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <div class="mt-4">
+      <h1>rdf-elements</h1>
+      <p>
+        The <code>rdf-elements</code> package provides <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_components">Web Components</a> based on <a href="https://lit.dev/">Lit</a> to handle <a href="https://rdf.js.org/">RDF/JS</a> data.
+      </p>
+    </div>
+
+    <div class="mb-4">
+      <h2>RdfEditor</h2>
+      <p>
+        The <code>RdfEditor</code> component wraps a <a href="https://codemirror.net/">CodeMirror</a> editor instance with an API designed to simplify the processing of RDF/JS objects.
+        The data is parsed and validated by the parsers of the <a href="https://www.npmjs.com/package/@rdfjs/formats">@rdfjs/formats</a> package.
+        If a <a href="https://rdf.js.org/dataset-spec/#datasetcore-interface">DatasetCore</a> object is given, the pretty print serializers of the same package are used.
+      </p>
+
+      <h3>Example</h3>
+      <div class="card">
+        <div class="card-body">
+          <div id="editor"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <h2>RdfNetwork</h2>
+      <p>
+        The <code>RdfNetwork</code> component wraps a <a href="https://js.cytoscape.org/">Cytoscape.js</a> network visualization and translates RDF/JS objects to Cytoscape's data structures.
+      </p>
+
+      <h3>Example</h3>
+      <div class="card">
+        <div class="card-body">
+          <div id="network"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <h2>RdfResource</h2>
+      <p>
+        The <code>RdfResource</code> component renders the given RDF/JS data in two-column tables, with one table per subject.
+      </p>
+
+      <h3>Example</h3>
+      <div class="card">
+        <div class="card-body">
+          <div id="resource"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <h2>RdfTable</h2>
+      <p>
+        The <code>RdfTable</code> component renders the given RDF/JS data in a three-column table for subject, predicate, and object.
+      </p>
+
+      <h3>Example</h3>
+      <div class="card">
+        <div class="card-body">
+          <div id="table"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <h2>SparqlEditor</h2>
+      <p>
+        The <code>SparqlEditor</code> component wraps a <a href="https://codemirror.net/">CodeMirror</a> editor instance.
+        The SPARQL syntax is validated with <a href="https://www.npmjs.com/package/sparqljs">SPARQL.js</a>.
+      </p>
+
+      <h3>Example</h3>
+      <div class="card">
+        <div class="card-body">
+          <div id="sparql-editor"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="index.js" type="module"></script>
+</body>
+</html>
