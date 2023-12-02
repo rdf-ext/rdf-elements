@@ -3,7 +3,7 @@ FROM node:20 AS builder
 RUN mkdir -p /build
 WORKDIR /build
 COPY . .
-RUN npm ci
+RUN npm install
 RUN npm run build
 
 FROM nginx:1-alpine
