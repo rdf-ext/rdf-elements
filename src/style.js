@@ -1,7 +1,7 @@
-import inlineStyle from '../generated/style.js'
+import { bootstrap, documentStyle }  from 'bs-elements'
 
-function style () {
-  return inlineStyle
-}
+documentStyle()
+
+const { style } = bootstrap({ register: true })
 
 export default style

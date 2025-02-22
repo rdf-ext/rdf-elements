@@ -31,7 +31,7 @@ class RdfFormatSelector extends LitElement {
           width: auto;
         }
       `,
-      style()
+      style
     ]
   }
 
@@ -42,14 +42,11 @@ class RdfFormatSelector extends LitElement {
     this.mediaType = 'text/turtle'
   }
 
-  onChange () {
-    const label = this.renderRoot.querySelector('option:checked').innerText
-    const mediaType = this.renderRoot.querySelector('select').value
-
+  onChange (event) {
     const options = {
       detail: {
-        label,
-        mediaType
+        label: event.detail.text,
+        mediaType: event.detail.value
       }
     }
 
@@ -60,24 +57,16 @@ class RdfFormatSelector extends LitElement {
     let size = ''
 
     if (this.size === 'large') {
-      size = 'form-select-lg'
+      size = 'lg'
     } else if (this.size === 'small') {
-      size = 'form-select-sm'
+      size = 'sm'
     }
 
-    return html`
-      <select id="format" class="form-select ${size}" @change=${this.onChange}>
-        ${this._renderOptions()}
-      </select>
-    `
-  }
-
-  _renderOptions () {
-    return Object.entries(this.formats).map(([type, label]) => {
-      const selected = type === this.mediaType
-
-      return html`<option ?selected=${selected} value="${type}">${label}</option>`
-    })
+    return html`<bs-select
+      .options=${this.formats}
+      selected=${this.mediaType}
+      size=${size}
+      @change=${event => this.onChange(event)}></bs-select>`
   }
 }
 
