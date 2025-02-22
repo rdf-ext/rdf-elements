@@ -82,7 +82,7 @@ class ResourceExample extends LitElement {
   }
 
   static get styles () {
-    return [style()]
+    return [style]
   }
 
   constructor () {

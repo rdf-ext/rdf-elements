@@ -19,7 +19,7 @@ class RdfTable extends RdfData {
   }
 
   static get styles () {
-    return [style()]
+    return [style]
   }
 
   constructor () {
