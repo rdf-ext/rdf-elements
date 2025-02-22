@@ -8,7 +8,6 @@
     "build": "vite build --base=./ --outDir=../dist examples",
     "dev": "vite",
     "prepack": "vite build --sourcemap",
-    "prepare": "node ./scripts/build.js",
     "test": "stricter-standard *.js examples/*.js src/*.js"
   },
   "repository": {
