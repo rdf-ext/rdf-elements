@@ -1,4 +1,4 @@
-import { bootstrap, documentStyle }  from 'bs-elements'
+import { bootstrap, documentStyle } from 'bs-elements'
 
 documentStyle()
 
