@@ -54,18 +54,10 @@ class RdfFormatSelector extends LitElement {
   }
 
   render () {
-    let size = ''
-
-    if (this.size === 'large') {
-      size = 'lg'
-    } else if (this.size === 'small') {
-      size = 'sm'
-    }
-
     return html`<bs-select
       .options=${this.formats}
       selected=${this.mediaType}
-      size=${size}
+      size=${this.size}
       @change=${event => this.onChange(event)}></bs-select>`
   }
 }
